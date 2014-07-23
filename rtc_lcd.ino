@@ -15,13 +15,12 @@ RTC_DS1307 RTC;
 LiquidCrystal lcd(12, 11, 10, 7, 6, 5, 4);
 // Pin used by the Relay
 // pin 13 will control the backlight
-int relayPin = 2, backLight = 13; 
+int backLight = 13; 
 
 void setup () {
   //Initialize the serial port, wire library and RTC module
   Serial.begin(9600);
   // Set the pin for outputing.
-  pinMode(relayPin, OUTPUT);
   pinMode(backLight, OUTPUT);
   digitalWrite(backLight, HIGH); // turn backlight on. Replace 'HIGH' with 'LOW' to turn it off.
   lcd.begin(16,4);              // columns, rows.  use 16,2 for a 16x2 LCD, etc.
