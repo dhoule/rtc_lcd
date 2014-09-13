@@ -72,7 +72,15 @@ void loop () {
     lcd.print(':');
     lcd.setCursor(14,1);
     //We print the minutes
-    lcd.print(now.minute(), DEC);
+    int minute = now.minute();
+    if(minute > 9){
+      lcd.print(minute, DEC);
+    }
+    else{
+      lcd.print(0);
+      lcd.setCursor(15,1);
+      lcd.print(minute, DEC);
+    }
     lcd.setCursor(16,1);
     lcd.print(':');
     lcd.setCursor(17,1);
